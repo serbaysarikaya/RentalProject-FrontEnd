@@ -13,6 +13,10 @@ import { CommonModule } from '@angular/common';
 import { ColorComponent } from './component/color/color.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CarImageComponent } from './component/car-image/car-image.component';
+import { CarDetailComponent } from './component/car-detail/car-detail.component';
+
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,19 @@ import { CarImageComponent } from './component/car-image/car-image.component';
     NaviComponent,
     CarComponent,
     ColorComponent,
-    CarImageComponent
+    CarImageComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     CommonModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: "toast-bottom-right"
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
